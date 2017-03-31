@@ -124,7 +124,7 @@ a:hover {
 /* modules/form.css */
 
 body {
-	background: url("../../images/forests.jpg") no-repeat center center fixed;
+	background: url("../images/forests.jpg") no-repeat center center fixed;
 	background-size: cover;
 	font-size: 16px;
 	font-family: 'Lato', sans-serif;
@@ -264,7 +264,7 @@ font-weight: bold;
 
 .register-box {
   color: #eee;
-  background: url("../../images/forests.jpg") no-repeat center center fixed;
+  background: url("../images/forests.jpg") no-repeat center center fixed;
   background-size: cover;
   opacity:0.1;
   max-width: 1000px;
