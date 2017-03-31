@@ -1,0 +1,206 @@
+<!--Author- Maitry Shah(maitry7.shah@gmail.com) -->
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/animate.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/rotater.css">
+ 
+  <script>
+  $(document).ready(function (e) {
+      $('#logo').addClass('animated fadeInDown');
+      $("input:text:visible:first").focus();
+      $('#unibui_logo').addClass('animated fadeInDown');
+      $("input:text:visible:first").focus();
+      $('#back').hide();
+      $('#unibui_div2').hide();
+
+
+
+       //----------focus the sign up div        
+
+       $( "#signup" ).click(function() {
+       document.body.filter= "alpha(opacity=100)";
+       $('#unibui_logo').hide();
+       $('#unibui_div2').show();
+       $( '#front' ).hide( 2000, function() {
+       $( '#front' ).remove(); });
+       $( "#back" ).show( 2000 );
+      });
+
+
+// The menu options for social media--pending- code written 
+
+     $(".trigger").click(function() {
+     $(".menu").toggleClass("active"); 
+  });
+
+
+     $("#heart").click(function() {
+     alert("Thank you!");
+  });
+
+  //Validation of Student Id   
+
+      $("#login__SID").keypress(function (e) {
+     //if the letter is not digit then display error and don't type anything
+     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+        //display error message
+      $("#errmsg").html("Digits Only").show().fadeOut("slow");
+               return false;
+    }
+   });
+
+  });
+
+
+</script>
+</head>
+
+
+<body>
+    <table >
+      <tr>
+     
+      <td>
+     <img id="heart" src="../images/mytree64.png" class="right" href="#info" alt="likeus" />
+      </td>
+      
+      <td>
+      <br/>
+      </td>
+      </tr>
+    </table>
+
+  <div class="align">
+
+ <span id="unibui_logo"><h1 style="color:#fff;font-family: fantasy;">My tree</h1></span>
+
+
+
+    <div id="front" class="login-box animated fadeInUp">
+    <div class="grid">
+
+      <form action="https://httpbin.org/post" method="POST" class="form login">
+
+        <div class="form__field">
+          <label for="login__username"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#user"></use></svg><span class="hidden">Username</span></label>
+          <input id="login__username" type="text" name="username" class="form__input" placeholder="Username" required>
+        </div>
+
+        <div class="form__field">
+          <label for="login__password"><svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#lock"></use></svg><span class="hidden">Password</span></label>
+          <input id="login__password" type="password" name="password" class="form__input" placeholder="Password" required>
+        </div>
+
+        <div class="form__field">
+          <input type="submit" value="Sign In">
+        </div>
+
+      </form>
+
+      <p class="text--center">Not a member? <a id="signup" href="#">Sign up now</a> <svg class="icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="assets/images/icons.svg#arrow-right"></use></svg></p>
+
+    </div>
+    
+    </div>
+
+     
+<span id="unibui_div2"><h1 style="color:#fff;font-family: fantasy;">Mytree</h1></span>
+    <div id="back" class="register-box animated fadeInUp">
+  
+  
+      <form  class="form login">
+
+      
+          <table>
+            <tr>
+                <td>
+
+                </td>
+            </tr>
+          <tr>
+                <td>
+                  <div class="form__field">
+                <input id="login__SID" name="SID" type="text" name="Student Id" class="form__input" placeholder="Student Id" required>
+                </div>
+                </td>
+
+                <td>
+                 <div class="form__field">
+            
+                <input id="login__email" type="text" name="School Email Id" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" class="form__input" placeholder="Email Id" required>
+              </div>
+
+                </td>
+
+                <td>
+                 <div class="form__field">
+              <input type='submit' id='submit' Value='Register' /> 
+              </div>
+                </td>
+          </tr>
+          <tr>
+
+                <td>
+                 &nbsp;<span id="errmsg"></span>
+                </td>
+
+          </tr>
+    
+
+      </form>
+
+    
+     
+    
+    </div>
+    
+    </div>
+
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icons"><symbol id="arrow-right" viewBox="0 0 1792 1792"><path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z"/></symbol><symbol id="lock" viewBox="0 0 1792 1792"><path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z"/></symbol><symbol id="user" viewBox="0 0 1792 1792"><path d="M1600 1405q0 120-73 189.5t-194 69.5H459q-121 0-194-69.5T192 1405q0-53 3.5-103.5t14-109T236 1084t43-97.5 62-81 85.5-53.5T538 832q9 0 42 21.5t74.5 48 108 48T896 971t133.5-21.5 108-48 74.5-48 42-21.5q61 0 111.5 20t85.5 53.5 62 81 43 97.5 26.5 108.5 14 109 3.5 103.5zm-320-893q0 159-112.5 271.5T896 896 624.5 783.5 512 512t112.5-271.5T896 128t271.5 112.5T1280 512z"/></symbol></svg>
+
+
+
+
+<div id="social" class="menu">
+  <div class="btn trigger"> <span class="line"></span> </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-html5"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-facebook"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-google-plus"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-twitter"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-css3"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-instagram"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-github"></i> </div>
+  </div>
+  <div class="rotater">
+    <div class="btn btn-icon"> <i class="fa fa-linkedin"></i> </div>
+  </div>
+
+</div>
+
+ 
+
+  </body>
+
+</html>
